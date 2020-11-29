@@ -34,16 +34,12 @@ class QuestionController extends Controller
         return new QuestionResource($question); 
     }
 
- 
-    public function edit(Question $question)
-    {
-        //
-    }
-
     
     public function update(Request $request, Question $question)
     {
-        //
+        $data = $request->all();
+       $question->update($data);
+       return response()->json('Updated', Response::HTTP_ACCEPTED); 
     }
 
     
