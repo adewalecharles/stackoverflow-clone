@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Reply extends Model
 {
     use HasFactory;
-protected $fillabel = ['body','user_id', 'question_id'];
+    
+protected $fillable = ['body','user_id', 'question_id'];
+
     public function question()
     {
         return $this->belongsTo(Question::class);
